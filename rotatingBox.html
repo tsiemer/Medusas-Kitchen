@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<img src="pizza-kitchen/computer-right.png" id="computerRight">
+
+			<img src="pizza-kitchen/table.png" id="table2">
+			<img src="pizza-kitchen/table.png" id="table3">
+			
+			<img src="pizza-kitchen/pizza-man-left.gif" id="pizza-man-left">
+			<img src="pizza-kitchen/pizza-man-frozen.gif" id="pizza-man-frozen">
+			<img src="pizza-kitchen/pizza-man.gif">
+	<title></title>
+<style type="text/css">
+	/*div{
+		background-color:blue;
+		color:white;
+		width:200px;
+		height:200px;
+		margin:40px;
+	}
+
+	div:hover{
+		transform:rotate(180deg);
+		background-color: pink;
+		color:black;
+		width:200px;
+		height:200px;
+		margin:40px;
+	}*/
+	body{
+		background-color:#196F3D;
+	}
+.keys{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items:center;
+	height:100vh;
+}
+.key{
+	display:column;
+	justify-content:center;
+	width:50px;
+	height:50px;
+	border:solid black 3px;
+	border-radius:50%;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+
+	transition:all 0.07s;
+}
+
+.big-key{
+	transform:scale(2);
+	cubic-bezier(1, 0.2, 0.42, 1.53);
+	border-color: #27AE60;
+	box-shadow:0 0 8px #27AE60;
+	border-radius: 25px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="keys">
+	<div class="key" data-key="65">a</div>
+	<div class="key" data-key="83">s</div>
+	<div class="key" data-key="68">d</div>
+	<div class="key" data-key="70">f</div>
+	<div class="key" data-key="71">g</div>
+	<div class="key" data-key="72">h</div>
+	<div class="key" data-key="74">j</div>
+	<div class="key" data-key="75">k</div>
+	<div class="key" data-key="76">l</div>
+	<div class="key" data-key="186">;</div>
+	<audio data-key="65" src="sounds/06-drum.wav" />
+		<audio data-key="83" src="sounds/15-rattle.wav" />
+		<audio data-key="68" src="sounds/11-shaker.wav" />
+		<audio data-key="70" src="sounds/20-stick.wav" />
+	<audio data-key="71" src="sounds/13-pan.wav"/>
+	<audio data-key="72" src="sounds/05-drum.wav"/>
+	<audio data-key="74" src="sounds/14-kick.wav"/>
+	<audio data-key="75" src="sounds/11-shaker.wav"/>
+	<audio data-key="76" src="sounds/16-snare.wav"/>
+	<audio data-key="186" src="sounds/21-boom.wav"/>
+</div>
+<script type="text/javascript">
+	window.onkeydown = function(e) {
+			var key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+			var audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+
+			if(!key) return; //no key defined!
+
+			audio.currentTime = 0;
+			audio.play();
+			key.classList.add('big-key');
+		}
+
+		function removeTransition(e) {
+			console.dir(e);
+			if(e.propertyName != 'transform') return;
+			e.srcElement.classList.remove('big-key');
+		}
+
+		const keys = document.querySelectorAll('.key');
+		keys.forEach(k => k.addEventListener('transitionend', removeTransition));
+
+</script>
+</body>
+</html>
+
+

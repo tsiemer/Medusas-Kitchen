@@ -1,0 +1,188 @@
+tr,th{
+		border:solid black 3px;
+	}
+	.big-box{
+		display:flex;
+		justify-content:center;
+		align-content:center;
+		flex-wrap: wrap;
+	}
+	.orderBox{
+		justify-content:center;
+		align-items:center;
+		background-color:#BADA55;
+		width:500px;
+		height:200px;
+	}
+	#cook1{
+
+			left:310px;
+			bottom:1px;
+			z-index:5;
+			position:absolute;
+			animation-name: waiter;
+			animation-duration:5s;
+			animation-iteration-count:10;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out;
+		}
+		.paused{
+			-webkit-animation-play-state:paused;
+		    -moz-animation-play-state:paused;
+		    -o-animation-play-state:paused; 
+		    animation-play-state:paused;
+		}
+	@keyframes waiter {
+		from{
+			bottom:0px;
+			left:310px;
+		}
+		to{
+			bottom:0px;
+			left:900px;
+		}
+	}
+
+			#cook2{
+				bottom:40px;
+				left:920px;
+			z-index:5;
+			position:relative;
+			animation-name: chef;
+			animation-duration:5s;
+			animation-iteration-count:10;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out;
+		}
+	@keyframes chef {
+		from{
+			bottom:40px;
+			left:920px;
+		}
+		to{
+			bottom:150px;
+			left:850px;
+		}
+	}
+
+
+#pizza-man {
+			top:50px;
+			left:300px;
+			z-index:5;
+			position: absolute;
+			animation-name: walk;
+			animation-duration:7s;
+			animation-iteration-count:10;
+			animation-direction: alternate;
+			animation-timing-function: ease-in-out;
+		}
+		.paused{
+			-webkit-animation-play-state:paused;
+		    -moz-animation-play-state:paused;
+		    -o-animation-play-state:paused; 
+		    animation-play-state:paused;
+		}
+	@keyframes walk {
+		from{
+			top:50px;
+			left:300px;
+		}
+		to{
+			top:50px;
+			left:600px;
+		}
+	}
+
+		
+		#table1{
+			position:relative;
+			margin-left:13%;
+			top:70px;
+		}
+		.oven-open{
+			float:right;
+			margin-right:20%;
+		}
+
+		#computerLeft{
+			position:absolute;
+			z-index:5;
+			top:45px;
+			left:225px;
+		}
+		#pizza-box-1{
+			z-index:8;
+			position:absolute;
+			top:150px;
+			left:55px;
+		}
+
+
+		.freezer{
+			position:absolute;
+			float:right;
+			right:2px;
+			
+		}
+		.computerOrder{
+			z-index:5;
+			position:absolute;
+			bottom:85px;
+			float:right;
+			right:35px;
+		}
+		.table2{
+			position:absolute;
+			right:2px;
+			bottom:-45px;
+		}
+
+
+
+		#table3{
+			position:absolute;
+			left:160px;
+			bottom:-45px;
+
+		}
+		#pizzaTable{
+			left:50px;
+			top:180px;
+			position:absolute;
+			z-index:6;
+		}
+				#student{	
+			left:-100px;
+			position:relative;
+			animation-duration:10s;
+			animation-name:customer;
+			animation-timing-function:linear;
+			animation-iteration-count: 5;
+
+		}
+
+		@keyframes customer{
+			0%{bottom:190px; left:-1000px;}
+			50%{bottom:190px; left:8px;}
+			100%{bottom:190px; left:-1000px;}
+		}
+
+
+				#hipster{	
+			left:-100px;
+			position:relative;
+			animation-duration:13s;
+			animation-name:customer1;
+			animation-timing-function:linear;
+			animation-iteration-count: 5;
+
+		}
+
+		@keyframes customer1{
+			0%{bottom:190px; left:-1000px;}
+			50%{bottom:190px; left:8px;}
+			100%{bottom:190px; left:-1000px;}
+		}
+
+

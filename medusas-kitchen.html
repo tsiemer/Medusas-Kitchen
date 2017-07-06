@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Medusas Kitchen</title>
+	<script type="text/javascript" src="pizza-kitchen/medusas-kitchen.js"></script>
+
+	<script>
+	window.onload = function() {
+		let cook1 = new Cook();
+
+		cook1.StartWalk();
+		cook1.Type();
+		cook1.OrderUp();
+	}
+	</script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<audio src="sounds/sound-footsteps-3.wav" id="footsteps1" />
+
+	<audio id="orderUp" src="sounds/sound-order-up.wav" />
+	<audio id="type1" src="sounds/sound-computer-keyboard.wav" />
+	<audio id="type2" src="sounds/sound-computer-keyboard.wav" />
+	<audio id="type3" src="sounds/sound-computer-keyboard.wav" />
+
+
+	<script type="text/javascript">
+function Customer1(){
+	var student = document.getElementById("student1");
+	var pos = -110;
+	var id = setInterval(frame, 10);
+	function frame(){
+		if (pos == 20) {
+			clearInterval(id);
+		} else{
+			pos++;
+			student.style.top = pos -'px';
+			student.style.left = pos + 'px';
+		}
+	}
+}
+function Customer2(){
+	var hipster = document.getElementById("hipster1");
+	var pos = -110;
+	var id = setInterval(frame, 10);
+	function frame(){
+		if (pos == 20) {
+			clearInterval(id);
+		} else{
+			pos++;
+			hipster.style.top = pos -'px';
+			hipster.style.left = pos + 'px';
+		}
+	}
+}
+
+
+let p = document.getElementById("pizza-man");
+
+function listener(e) {
+	console.dir(e);
+	switch(e.type) {
+		case "animationiteration":
+			if(p.attributes["src"].nodeValue.indexOf('right') > 0) {
+				p.attributes['src'].nodeValue = "pizza-kitchen/pizza-man.gif";
+			}
+			else {
+				p.attributes['src'].nodeValue = "pizza-kitchen/pizza-man-right.gif"
+			}
+		  console.log(`new loop started after ${e.elapsedTime} seconds`);
+		  break;
+	}
+}
+
+p.addEventListener("animationiteration",listener, false);
+	</script>
+
+	<script type="text/javascript">
+
+let f = document.getElementById("cook1");
+
+function listener(e) {
+	console.dir(e);
+	switch(e.type) {
+		case "animationstart":
+		console.log('start');
+		  break;
+
+		case "animationend":
+		  console.log('end');
+		  break;
+
+		case "animationiteration":
+			if(f.attributes["src"].nodeValue.indexOf('right') > 0) {
+				f.attributes['src'].nodeValue = "pizza-kitchen/pizza-man-left.gif";
+			}
+			else {
+				f.attributes['src'].nodeValue = "pizza-kitchen/pizza-man-right.gif"
+			}
+		  console.log(`new loop started after ${e.elapsedTime} seconds`);
+		  break;
+	}
+}
+f.addEventListener("animationstart",listener, false);
+f.addEventListener("animationend",listener, false);
+f.addEventListener("animationiteration",listener, false);
+
+	</script>
+
+		<script type="text/javascript">
+
+let c = document.getElementById("cook2");
+
+function listener(e) {
+	console.dir(e);
+	switch(e.type) {
+		case "animationstart":
+		console.log('start');
+		  break;
+
+		case "animationend":
+		  console.log('end');
+		  break;
+
+		case "animationiteration":
+			if(c.attributes["src"].nodeValue.indexOf('right') > 0) {
+				c.attributes['src'].nodeValue = "pizza-kitchen/pizza-man-frozen.gif";
+			}
+			else {
+				c.attributes['src'].nodeValue = "pizza-kitchen/pizza-man-right.gif"
+			}
+		  console.log(`new loop started after ${e.elapsedTime} seconds`);
+		  break;
+	}
+}
+c.addEventListener("animationstart",listener, false);
+c.addEventListener("animationend",listener, false);
+c.addEventListener("animationiteration",listener, false);
+</body>
+</html>

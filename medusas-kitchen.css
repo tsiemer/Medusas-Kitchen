@@ -1,0 +1,314 @@
+body{
+			border:double black 6px;
+			margin:3px;
+			height:97vh;
+			background-image:url();
+		}
+		#container{
+			position:relative;
+		}
+		#cook1{
+			left:310px;
+			top:-150px;
+			z-index:5;
+			position:absolute;
+		}
+		#cook2{
+			bottom:40px;
+			left:920px;
+			z-index:5;
+			position:relative;
+			animation-name: chef;
+			animation-duration:6s;
+			animation-iteration-count:3;
+			animation-direction: alternate;
+			animation-timing-function:linear;
+			animation-delay:10s;
+		}
+	@keyframes chef {
+		from{
+			bottom:150px;
+			left:850px;
+		}
+		to{
+			bottom:40px;
+			left:920px;
+		}
+	}
+	.paused{
+		    animation-play-state:paused;
+		}
+		#pizza-man {
+			top:50px;
+			left:300px;
+			z-index:5;
+			position: absolute;
+			animation-name: walk;
+			animation-duration:8s;
+			animation-iteration-count:2;
+			animation-direction:alternate;
+			animation-delay:22s;
+		animation-timing-function:linear;
+		}
+	@keyframes walk {
+
+		from{
+			top:50px;
+			left:300px;
+		}
+		to{
+			top:100px;
+			left:850px;
+		}
+	}
+	.paused{
+		    animation-play-state:paused;
+		}
+		#studentCome{
+			left:-100px;
+			top:500px;
+			position:absolute;
+			animation-name:come;
+			animation-duration:4s;
+			animation-iteration-count:2;
+			animation-timing-function:ease-out;
+			animation-direction:alternate;
+		}
+		@keyframes come{
+			from{left:-100px; top:500px;}
+			to{left:40px; top:500px;}
+		}
+		#studentLeave{
+			left:-100px;
+			top:10px;
+			position:absolute;
+			animation-name:leave;
+			animation-duration:15s;
+			animation-delay:15s;
+			animation-iteration-count:2;
+			animation-direction:alternate;
+			animation-timing-function:ease-out;
+		}
+		@keyframes leave{
+			from{
+				left:-100px; 
+				top:10px;
+			}
+			to{
+				left:40px; 
+				top:10px;
+			}
+		}
+		#hipsterCome{
+			left:-100px;
+			top:500px;
+			position:absolute;
+			animation-name:Hcome;
+			animation-duration:6s;
+			animation-delay:10s;
+			animation-iteration-count:2;
+			animation-timing-function:ease-out;
+			animation-direction:alternate;
+		}
+		@keyframes Hcome{
+			from{left:-100px; top:500px;}
+			to{left:40px; top:500px;}
+		}
+		#hipsterLeave{
+			left:-100px;
+			top:10px;
+			position:absolute;
+			animation-name:Hleave;
+			animation-duration:16s;
+			animation-delay:25s;
+			animation-direction:alternate;
+			animation-fill-mode:forwards;
+		}
+		@keyframes Hleave{
+			from{
+				left:-100px; 
+				top:10px;
+			}
+			to{
+				left:40px; 
+				top:10px;
+			}
+		}
+
+
+		
+		#table1{
+			position:relative;
+			margin-left:13%;
+			top:70px;
+		}
+		.table2{
+			position:absolute;
+			right:2px;
+			bottom:-45px;
+		}
+		#table3{
+			position:absolute;
+			left:160px;
+			bottom:-45px;
+		}
+		#pizzaTable{
+			left:50px;
+			top:180px;
+			position:absolute;
+			z-index:6;
+		}
+
+
+		#pizza-box-1{
+			z-index:8;
+			position:absolute;
+			top:150px;
+			left:55px;
+		}
+		#pizza-box-2{
+			z-index:9;
+			position:absolute;
+			top:128px;
+			left:66px;
+		}
+		#pizza-box-3{
+			z-index:9;
+			position:absolute;
+			top:105px;
+			left:56px;
+		}
+		.oven-open{
+			margin-top:0%;
+			float:right;
+			margin-right:20%;
+			width:220px;
+			height:220px;
+		}
+		.freezer{
+			position:absolute;
+			float:right;
+			right:15px;
+			bottom:250px;
+		}
+		#computerLeft{
+			position:absolute;
+			z-index:5;
+			top:45px;
+			left:225px;
+		}
+		.computerOrder{
+			z-index:5;
+			position:absolute;
+			bottom:85px;
+			float:right;
+			right:35px;
+		}
+	.big-box{
+		display:flex;
+	}
+	.orderBox{
+		background-color:#006491;
+		width:20%;
+		height:200px;
+		border-top:solid #2b1d0e 10px;
+	}
+	.orderBox2{
+		border-top:solid #2b1d0e 10px;
+		background-color:#006491;
+		width:20%;
+		height:200px;
+		display:flex;
+	}
+	.orderBox3{
+		width:20%;
+		height:200px;
+		border-top:solid #2b1d0e 10px;
+		position:relative;
+		overflow:hidden;
+		border-left:solid #2b1d0e 5px;
+		border-right:solid #2b1d0e 5px;
+		border-top:solid #2b1d0e 5px;
+	}
+	.doorLeft, .doorRight{
+		position:absolute;
+		height:100%;
+		width:50%;
+		top:0%;
+		transition: all ease 2s;
+	}
+
+	.doorLeft{
+		left:0%;
+		background-color:#CD2029;
+	}
+	.doorRight{
+		left:50%;
+		background-color:#CD2029;
+	}
+	.orderBox3:hover .doorLeft{
+		left: -50%;
+	}
+	.orderBox3:hover .doorRight{
+		left:100%;
+	}
+	.orderBox4:hover #orders3{
+		display:block;
+	}
+	.orderBox4{
+		display:flex;
+		background-color:#006491;
+		width:20%;
+		height:200px;
+		align-content:center;
+		justify-content:center;
+		border-top:solid #2b1d0e 10px;
+	}
+	.orderBox5{
+		background-color:#006491;
+		width:20%;
+		height:200px;
+		border-top:solid #2b1d0e 10px;
+	}
+	.redCircle{
+		display:flex;
+		background-color:white;
+		border-radius:50%;
+		width:70px;
+		height:70px;
+	}
+	.portHole{
+		background-image:url("pizza-kitchen/portHoleImg.jpg");
+		border-radius:50%;
+		width:70px;
+		height:70px;
+		justify-content:center;
+		align-self:center;
+		border: double black 2px;
+		margin:15px;
+		margin-left:20px;
+	}
+
+	.Customer{
+		background-color:#006491;
+		border:none;
+		border-radius:50%;
+	}
+	#orders{
+		background-color:#e31837;
+		align-content:center;
+		display:none;
+	}
+	#orders2{
+		background-color:#006491;
+		align-content:center;
+		display:none;
+	}
+	#orders3{
+		background-color:#e31837;
+		align-content:center;
+		display:none;
+	}
+	.flooring{
+		background-image:url("pizza-kitchen/wood-floor2.jpeg");
+	}

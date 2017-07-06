@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Pizza Place</title>
+	<style>
+		.container {
+			position:relative;
+			width: 600px;
+			height: 600px;
+			background-color:lightblue;
+		}
+
+		.item {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: purple;
+		}
+		.item2 {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: pink;
+		}
+		.item3 {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+		}
+
+		.item4 {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		function MoveRedBox() {
+			let container = document.getElementById('container');
+			let item = document.getElementById('item');
+
+			let item2 = document.getElementById('item2');
+
+			let item3 = document.getElementById('item3');
+
+			let item4 = document.getElementById('item4');
+
+			let cWidth = getComputedStyle(container).width.replace('px','');
+			let iWidth = getComputedStyle(item).width.replace('px','');
+
+			let pos = 0;
+			let stop = cWidth - iWidth;
+			let iId = setInterval(frame, 10);
+
+			console.log(cWidth);
+			console.log(iWidth);
+			console.log(`pos: ${pos} stop: ${stop}`);
+
+			function frame() {
+				if (pos == stop) {
+			      clearInterval(iId);
+			    } else {
+			      pos++; 
+			      item.style.bottom = pos + 'px'; 
+			      item.style.right = pos + 'px'; 
+
+			      item2.style.top = pos + 'px'; 
+			      item2.style.left = pos + 'px'; 
+
+			      item3.style.bottom = pos + 'px'; 
+			      item3.style.left = pos - 'px';
+
+			      item4.style.top = pos + 'px'; 
+			      item4.style.right = pos + 'px';
+			    }
+			}
+		}
+	</script>
+</head>
+<body>
+	<input id="btn" type="button" value="Move purple Box" />
+	<div id="container" class="container">
+		<div id="item" class="item"></div>
+
+		<div id="item2" class="item2"></div>
+
+		<div id="item3" class="item3"></div>
+
+		<div id="item4" class="item4"></div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('btn').onclick = MoveRedBox;
+	</script>
+</body>
+</html>
